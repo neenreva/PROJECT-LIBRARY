@@ -2,26 +2,8 @@
     margin: 0;
 }
 
-.bookWrapper {
+.wrapper {
     width: 400px;
     max-width: 95%;
     margin: 0 auto;
-}
-
-.bookWrapper label {
-    display: block;
-    margin: 0.5em 0;
-
-}
-
-.bookWrapper label input{
-    font-size: 18px;
-    padding: 0.5em;
-}
-
-.bookWrapper input[type='submit'] {
-    margin: 0;
-    font-size: 18px;
-    border: none;
-    padding: 5px 10px;
 }
