@@ -2,47 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script defer src="app.js"></script>
     <title>Library</title>
   </head>
+  
   <body>
   	<div id="wrapper">
 	    <header>
-	    	<div id="page-banner">
-	    		<h1 class="title">Bookorama</h1>
-          <p>Books for Ninjas</p>
-          <form id="search-books">
-            <input type="text" placeholder="Search books..." />
-          </form>
-	    	</div>
+			<h1>Local Library</h1>
 	    </header>
-	    <div id="book-list">
-	    	<h2 class="title">Books to Read</h2>
-	    	<ul>
-	    		<li>
-	    			<span class="name">Name of the Wind</span>
-	    			<span class="delete">delete</span>
-	    		</li>
-	    		<li>
-	    			<span class="name">The Wise Man's Fear</span>
-	    			<span class="delete">delete</span>
-	    		</li>
-	    		<li>
-	    			<span class="name">Kafka on the Shore</span>
-	    			<span class="delete">delete</span>
-	    		</li>
-	    		<li>
-	    			<span class="name">The Master and the Margarita</span>
-	    			<span class="delete">delete</span>
-	    		</li>
-	    	</ul>
-	    </div>
 	    <form id="add-book">
-	    	<input type="text" placeholder="Add a book..." />
-	    	<button>Add</button>
+	    	<input name="book-title" type="text" placeholder="Book Title" />
+			<input name="author" type="text" placeholder="Author">
+			Read <input type="checkbox" checked>
+	    	<button>Add Book</button>
 	    </form>
+		<table class="tabel table-striped">
+			<tr class="big-info">
+				<th>Book Title</th>
+				<th>Author</th>
+				<th>Completed Reading</th>
+			</tr>
+			<tbody id="myTable">
 
+			</tbody>
+		</table>
     </div>
   </body>
+  <style>
+		body {
+			width: fit-content;
+			align-content: center;
+	  	}
+
+		header {
+			align-content: center;
+		}
+		
+		th {
+		background-color: navy;
+		color: aqua;
+		padding: 2vh;
+		}
+
+		td {
+		padding: 2vh;
+		text-align: center;
+		}
+</style>
 </html>

@@ -1,29 +1,37 @@
-const list = document.querySelector('#book-list ul');
-list.addEventListener('click', function(e) {
-    if(e.target.className === 'delete') {
-        let li = e.target.parentElement;
-        list.removeChild(li);
-    }
-});
+const form = document.getElementById('add-book');
+const table = document.getElementById('myTable');
 
-const addForm = document.forms['add-book'];
-addForm.addEventListener('submit', function(e) {
+class Book {
+  constructor(title, author, read) {
+    this.title = title;
+    this.author = author;
+    this.read = read;
+  }
+}
+
+function addBookToLibrary(book) {
+  form.addEventListener('click', function(e) {
     e.preventDefault();
-    const value = addForm.querySelector('input[type="text"]').value;
+    const newBookInfo = e.target.parentElement();
+    console.log(newBookInfo);
+  })
+}
 
-    //create elements
-    const li = document.createElement('li');
-    const bookName = document.createElement('span');
-    bookName.classList.add('name');
-    const deleteBtn = document.createElement('span');
-    deleteBtn.classList.add('delete');
+function buildLibrary(data) {
+  for (let i = 0; i < data.length; i++) {
+    let row = `<tr>
+                  <td>${data[i].title}</td>
+                  <td>${data[i].author}</td>
+                  <td>${data[i].read}</td>
+                </tr>`
+    table.innerHTML += row
+  }
+}
 
-    //add content
-    deleteBtn.textContent = ' delete';
-    bookName.textContent = value;
+let myLibrary = [ 
+  new Book('Lullaby','Chuck Palahniuk','yes'), 
+  new Book ('Choke','Chuck Palahniuk','yes'), 
+  new Book('Deception Point','Dan Brown','yes'),
+];
 
-    //append to dom
-    li.appendChild(bookName);
-    li.appendChild(deleteBtn);
-    list.appendChild(li);
-});
+buildLibrary(myLibrary);
