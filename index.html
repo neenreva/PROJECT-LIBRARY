@@ -1,54 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Digital Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="app.js"></script>
-    <title>Library</title>
   </head>
-  
   <body>
-  	<div id="wrapper">
-	    <header>
-			<h1>Local Library</h1>
-	    </header>
-	    <form id="add-book">
-	    	<input name="book-title" type="text" placeholder="Book Title" />
-			<input name="author" type="text" placeholder="Author">
-			Read <input type="checkbox" checked>
-	    	<button>Add Book</button>
-	    </form>
-		<table class="tabel table-striped">
-			<tr class="big-info">
-				<th>Book Title</th>
-				<th>Author</th>
-				<th>Completed Reading</th>
-			</tr>
-			<tbody id="myTable">
-
-			</tbody>
-		</table>
-    </div>
+    <h1>My Library</h1>
+    <form id="book-info" class="book-form">
+      <input id="author" type="text" placeholder="Author" />
+      <input id="title" type="text" placeholder="Title" />
+      <input id="pages" type="number" placeholder="Number of Pages" />
+      <div class="radio">
+        <input
+          class="radio__input"
+          type="radio"
+          value="PlanonReading"
+          name="myRadio"
+          id="myRadio1"
+        />
+        <label class="radio__label" for="myRadio1">Plan on Reading</label>
+        <input
+          class="radio__input"
+          type="radio"
+          value="CurrentlyReading"
+          name="myRadio"
+          id="myRadio2"
+        />
+        <label class="radio__label" for="myRadio2">Currently Reading</label>
+        <input
+          class="radio__input"
+          type="radio"
+          value="FinishedReading"
+          name="myRadio"
+          id="myRadio3"
+        />
+        <label class="radio__label" for="myRadio3">Finished Reading</label>
+		<button id="book-submit">Submit Book to My Library</button>
+      </div>
+      <br />
+      
+    </form>
+    <h2>Current Reading</h2>
+    <table class="book-table">
+      <thead>
+        <tr>
+          <th class="table-head">Author</th>
+          <th class="table-head">Title</th>
+          <th class="table-head">Number of Pages</th>
+          <th class="table-head">Status</th>
+        </tr>
+      </thead>
+    </table>
   </body>
-  <style>
-		body {
-			width: fit-content;
-			align-content: center;
-	  	}
-
-		header {
-			align-content: center;
-		}
-		
-		th {
-		background-color: navy;
-		color: aqua;
-		padding: 2vh;
-		}
-
-		td {
-		padding: 2vh;
-		text-align: center;
-		}
-</style>
 </html>

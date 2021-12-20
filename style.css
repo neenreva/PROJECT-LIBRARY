@@ -1,9 +1,97 @@
 * {
-    margin: 0;
+  margin: 0;
 }
 
-.wrapper {
-    width: 400px;
-    max-width: 95%;
-    margin: 0 auto;
+body {
+  padding: 2rem;
+  font-family: "Roboto Condensed", sans-serif;
+  width: 600px;
+}
+
+h1 {
+  padding: 1rem;
+}
+h2 {
+  padding: 1rem;
+}
+
+.book-form {
+  width: 500px;
+  margin: 2 rem auto;
+  border: 3px dotted #f2aa15;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.book-form input {
+  font-family: "Roboto Condensed", sans-serif;
+  display: block;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.radio {
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.radio__input {
+  display: none;
+}
+
+.radio__label {
+  padding: 8px 14px;
+}
+
+.book-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 25px 0;
+  font-size: 0.9rem;
+  min-width: 500px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.book-table thead tr {
+  background: linear-gradient(
+    90deg,
+    rgba(222, 193, 0, 1) 0%,
+    rgba(242, 170, 21, 1) 100%
+  );
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+#book-submit {
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(222, 193, 0, 1) 0%,
+    rgba(242, 170, 21, 1) 100%
+  );
+  padding: 0.5rem;
+  border: none;
+}
+
+.book-table tbody tr {
+  border-bottom: solid rgba(0, 0, 0, 0.05);
+}
+
+.book-table tbody tr:nth-last-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.book-table tbody tr:last-of-type {
+  border-bottom: 2px solid #f2aa15;
+}
+
+.book-table th,
+.book-table td {
+  padding: 12px 15px;
 }

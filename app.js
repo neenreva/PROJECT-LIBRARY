@@ -1,37 +1,51 @@
-const form = document.getElementById('add-book');
-const table = document.getElementById('myTable');
+const bookBtn = document.getElementById("book-submit");
+const table = document.querySelector(".book-table");
 
-class Book {
-  constructor(title, author, read) {
-    this.title = title;
-    this.author = author;
-    this.read = read;
-  }
-}
-
-function addBookToLibrary(book) {
-  form.addEventListener('click', function(e) {
-    e.preventDefault();
-    const newBookInfo = e.target.parentElement();
-    console.log(newBookInfo);
-  })
-}
-
-function buildLibrary(data) {
-  for (let i = 0; i < data.length; i++) {
-    let row = `<tr>
-                  <td>${data[i].title}</td>
-                  <td>${data[i].author}</td>
-                  <td>${data[i].read}</td>
-                </tr>`
-    table.innerHTML += row
-  }
-}
-
-let myLibrary = [ 
-  new Book('Lullaby','Chuck Palahniuk','yes'), 
-  new Book ('Choke','Chuck Palahniuk','yes'), 
-  new Book('Deception Point','Dan Brown','yes'),
+let myLibrary = [
+  {
+    author: "James",
+    title: "I like to things",
+    pages: "1234",
+    readStatus: undefined,
+  },
 ];
 
-buildLibrary(myLibrary);
+
+class Book {
+  constructor(author, title, pages, readStatus) {
+    this.author = author;
+    this.title = title;
+    this.pages = pages;
+    this.readStatus = readStatus;
+  }
+}
+
+bookBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  let author = document.querySelector("#author").value;
+  let title = document.querySelector("#title").value;
+  let pages = document.querySelector("#pages").value;
+  //let status = document.querySelector()
+
+  myLibrary.push(new Book(author, title, pages));
+  loadLibrary();
+});
+
+const loadLibrary = function () {
+  
+    table.insertAdjacentHTML(
+      "afterbegin",
+      `
+    <tbody>
+        <tr>
+          <td>${myLibrary[myLibrary.length-1].author}</td>
+		      <td><i>${myLibrary[myLibrary.length-1].title}</td>
+		      <td>${myLibrary[myLibrary.length-1].pages}</td>
+		      <td>Currently Reading</td>
+        </tr>
+      </tbody>
+    `
+    );
+};
+
+loadLibrary();
