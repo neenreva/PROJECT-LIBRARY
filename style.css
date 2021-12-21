@@ -3,6 +3,7 @@
 }
 
 body {
+  margin: 0 auto;
   padding: 2rem;
   font-family: "Roboto Condensed", sans-serif;
   width: 600px;
@@ -16,8 +17,6 @@ h2 {
 }
 
 .book-form {
-  width: 500px;
-  margin: 2 rem auto;
   border: 3px dotted #f2aa15;
   border-radius: 0.5rem;
   padding: 2rem;
@@ -27,19 +26,21 @@ h2 {
   font-family: "Roboto Condensed", sans-serif;
   display: block;
   padding: 0.5rem;
-  width: 100%;
-}
-
-.radio {
-  display: inline-flex;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  width: 96%;
 }
 
 .radio__input {
   display: none;
 }
+
+.radio {
+  width: 100%;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+
 
 .radio__label {
   padding: 8px 14px;
@@ -48,7 +49,6 @@ h2 {
 .book-table {
   border-collapse: collapse;
   width: 100%;
-  margin: 25px 0;
   font-size: 0.9rem;
   min-width: 500px;
   border-radius: 0.5rem;
@@ -67,7 +67,7 @@ h2 {
   font-weight: bold;
 }
 
-#book-submit {
+.btn {
   font-family: "Roboto Condensed", sans-serif;
   color: white;
   background: linear-gradient(
@@ -77,6 +77,12 @@ h2 {
   );
   padding: 0.5rem;
   border: none;
+  border-radius: .5rem;
+}
+
+#book-submit {
+  width: 100%;
+  border-radius: unset;
 }
 
 .book-table tbody tr {
@@ -94,4 +100,6 @@ h2 {
 .book-table th,
 .book-table td {
   padding: 12px 15px;
-}
+} 
+
+
